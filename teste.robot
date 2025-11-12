@@ -2,16 +2,20 @@
 
 Library  SeleniumLibrary
 
-** Variables **
+*** Variables ***
+
+${SITE_URL_HERBERT}  https://www.google.com/
+
+*** Keywords ***
+
+Abrir Site Herbert
 
 
-
-
-** Keywords **
+    Open Browser  ${SITE_URL_HERBERT}  chrome
 
 Acessar Site da qazando
 
-    Open Browser  https://automationpratice.com.br/  chrome
+    Open Browser  ${SITE_URL_HERBERT}  chrome
 
 Aguardar site carregar
 
