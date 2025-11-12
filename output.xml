@@ -1,52 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.14.0 on win32)" generated="2025-11-12T16:44:07.842097" rpa="false" schemaversion="5">
+<robot generator="Robot 7.3.2 (Python 3.14.0 on win32)" generated="2025-11-12T17:02:26.518438" rpa="false" schemaversion="5">
 <suite id="s1" name="Teste" source="C:\QAzando\RobotFramework\TESTEROBOT\teste.robot">
-<test id="s1-t1" name="Cenário 2: Testando o site do Robot" line="47">
-<kw name="Abrir Site Herbert">
+<test id="s1-t1" name="Cenário 1: Acessando o site da QAZANDO" line="36">
+<kw name="Acessar Site da qazando">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-11-12T16:44:07.998392" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com/'.</msg>
-<arg>${SITE_URL_HERBERT}</arg>
+<msg time="2025-11-12T17:02:26.677096" level="INFO">Opening browser 'chrome' to base url 'https://www.automationpratice.com.br/'.</msg>
+<arg>${SITE_URL}</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-11-12T16:44:07.997963" elapsed="1.804413"/>
+<status status="PASS" start="2025-11-12T17:02:26.676889" elapsed="1.928843"/>
 </kw>
-<status status="PASS" start="2025-11-12T16:44:07.996958" elapsed="1.805715"/>
+<status status="PASS" start="2025-11-12T17:02:26.676313" elapsed="1.929782"/>
 </kw>
 <kw name="Aguardar site carregar">
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-11-12T16:44:12.803983" level="INFO">Slept 3 seconds.</msg>
+<msg time="2025-11-12T17:02:31.608046" level="INFO">Slept 3 seconds.</msg>
 <arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-11-12T16:44:09.803537" elapsed="3.000546"/>
+<status status="PASS" start="2025-11-12T17:02:28.606908" elapsed="3.001557"/>
 </kw>
-<status status="PASS" start="2025-11-12T16:44:09.803209" elapsed="3.000965"/>
+<status status="PASS" start="2025-11-12T17:02:28.606487" elapsed="3.002349"/>
 </kw>
 <kw name="Clicar sobre o botao login">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-11-12T16:44:12.804975" level="INFO">Clicking element 'xpath://a[@href='/login']'.</msg>
-<msg time="2025-11-12T16:44:12.891176" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2025-11-12T16:44:12.891372" level="FAIL">Element with locator 'xpath://a[@href='/login']' not found.</msg>
+<msg time="2025-11-12T17:02:31.612227" level="INFO">Clicking element 'xpath://a[@href='/login']'.</msg>
 <arg>xpath://a[@href='/login']</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="FAIL" start="2025-11-12T16:44:12.804706" elapsed="0.089256">Element with locator 'xpath://a[@href='/login']' not found.</status>
+<status status="PASS" start="2025-11-12T17:02:31.611052" elapsed="0.102427"/>
 </kw>
-<status status="FAIL" start="2025-11-12T16:44:12.804463" elapsed="0.089745">Element with locator 'xpath://a[@href='/login']' not found.</status>
+<status status="PASS" start="2025-11-12T17:02:31.609942" elapsed="0.103708"/>
 </kw>
 <kw name="Aguardar site carregar">
-<status status="NOT RUN" start="2025-11-12T16:44:12.895192" elapsed="0.000057"/>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-12T17:02:34.715845" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-12T17:02:31.714357" elapsed="3.001883"/>
+</kw>
+<status status="PASS" start="2025-11-12T17:02:31.713992" elapsed="3.002638"/>
 </kw>
 <kw name="Digitar email">
-<status status="NOT RUN" start="2025-11-12T16:44:12.895497" elapsed="0.000034"/>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-12T17:02:34.719467" level="INFO">Typing text 'qazando@teste.com' into text field 'id:user'.</msg>
+<msg time="2025-11-12T17:02:34.811830" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-11-12T17:02:34.812109" level="FAIL">Element with locator 'id:user' not found.</msg>
+<arg>id:user</arg>
+<arg>${USUARIO_EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="FAIL" start="2025-11-12T17:02:34.718618" elapsed="0.110706">Element with locator 'id:user' not found.</status>
+</kw>
+<status status="FAIL" start="2025-11-12T17:02:34.717691" elapsed="0.111800">Element with locator 'id:user' not found.</status>
 </kw>
 <kw name="Digitar senha">
-<status status="NOT RUN" start="2025-11-12T16:44:12.895710" elapsed="0.000030"/>
+<status status="NOT RUN" start="2025-11-12T17:02:34.829842" elapsed="0.000038"/>
 </kw>
-<kw name="Clicar sobre o botao login">
-<status status="NOT RUN" start="2025-11-12T16:44:12.895890" elapsed="0.000027"/>
+<kw name="Aguardar site carregar">
+<status status="NOT RUN" start="2025-11-12T17:02:34.830120" elapsed="0.000032"/>
 </kw>
-<status status="FAIL" start="2025-11-12T16:44:07.996428" elapsed="4.899682">Element with locator 'xpath://a[@href='/login']' not found.</status>
+<kw name="Clicar em logar">
+<status status="NOT RUN" start="2025-11-12T17:02:34.830376" elapsed="0.000029"/>
+</kw>
+<kw name="Aguardar site carregar">
+<status status="NOT RUN" start="2025-11-12T17:02:34.830641" elapsed="0.000030"/>
+</kw>
+<status status="FAIL" start="2025-11-12T17:02:26.675715" elapsed="8.155466">Element with locator 'id:user' not found.</status>
 </test>
-<status status="FAIL" start="2025-11-12T16:44:07.843495" elapsed="5.053260"/>
+<status status="FAIL" start="2025-11-12T17:02:26.520304" elapsed="8.311666"/>
 </suite>
 <statistics>
 <total>
