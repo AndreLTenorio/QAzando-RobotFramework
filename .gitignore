@@ -1,11 +1,2 @@
-# Arquivos de log e relatório do Robot Framework
-log.html
-output.xml
-report.html
-
-# Screenshots de teste
-# O asterisco (*) ignora qualquer arquivo que termine com .png
-*.png
-
-# Arquivos de log genéricos (boa prática)
-*.log
+# Ignora a pasta de resultados do Robot
+/results/
