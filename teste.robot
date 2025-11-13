@@ -17,6 +17,10 @@ Abrir Site Herbert
 Acessar Site da qazando
     Open Browser    ${SITE_URL}    chrome          # <-- Esta já está correta
 
+Acessar esse site
+    [Arguments]  ${url}
+    Open Browser    ${url}    chrome
+
 Aguardar site carregar   Sleep  3s
 
 Clicar sobre o botao login
@@ -52,3 +56,12 @@ Cenário 2: Testando o site do Robot
     Digitar email
     Digitar senha
     Clicar sobre o botao login    # CORRIGIDO AQUI (Tinha outro erro, Clicar em logar não existe)
+
+Cenário 3: Testando valor no teste
+    Acessar esse site  https://www.automationpratice.com.br/
+    Aguardar site carregar
+    Clicar sobre o botao login
+    Aguardar site carregar
+    Digitar email
+    Digitar senha
+    Clicar sobre o botao login
