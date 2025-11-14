@@ -1,5 +1,4 @@
-# Ignora todo o conteúdo da pasta results
-results/*
+/results/
 
 # Mas NÃO ignora o arquivo .gitkeep (para manter a pasta)
 !results/.gitkeep
