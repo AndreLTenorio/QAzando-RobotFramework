@@ -38,6 +38,9 @@ Verificar texto login realizado
     ${texto_atual}  Get Text  id:swal2-title
     Should Be Equal As Strings  ${texto_atual}  Login realizado
 
+Tirar Printscreen
+    Capture Page Screenshot
+
 *** Test Cases ***
 Cenário 1: Acessando o site do Robot
     [Tags]  Teste1
@@ -46,8 +49,11 @@ Cenário 1: Acessando o site do Robot
     Clicar em Link de Login
     Esperar Página Carregar
     Preencher Campo de E-mail
+    Tirar Printscreen
     Preencher Campo de Senha
+    Tirar Printscreen
     Clicar em Botão de Login
+    Tirar Printscreen
     Esperar Página Carregar
     Verificar texto login realizado
 
