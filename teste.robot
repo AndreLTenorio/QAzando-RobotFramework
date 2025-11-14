@@ -4,64 +4,67 @@ Library  SeleniumLibrary
 Library  BuiltIn    
 
 *** Variables ***
-${SITE_URL}  https://www.automationpratice.com.br/
+
+${SITE_URL}  https://automationpratice.com.br/
 ${SITE_URL_HERBERT}  https://www.google.com/
-${USUARIO_EMAIL}  qazando@teste.com
+${USUARIO_EMAIL}  qazando@gmail.com
 ${USUARIO_SENHA}  123456
 
 *** Keywords ***
 
 Abrir Site Herbert
-    Open Browser    ${SITE_URL_HERBERT}    chrome  # <-- Mude ${SITE_URL} para ${SITE_URL_HERBERT}
+    Open Browser  ${SITE_URL_HERBERT}  chrome
 
-Acessar Site da qazando
-    Open Browser    ${SITE_URL}    chrome          # <-- Esta já está correta
+Abrir Site
+    Open Browser  ${SITE_URL}  chrome
 
-Acessar esse site
+Abrir esse site
     [Arguments]  ${url}
-    Open Browser    ${url}    chrome
+    Open Browser  ${url}  chrome
 
-Aguardar site carregar   Sleep  3s
+Esperar Página Carregar
+    Sleep  3s
 
-Clicar sobre o botao login
+Clicar em Link de Login
     Click Element  xpath://a[@href='/login']
 
-Digitar email
+Preencher Campo de E-mail
     Input Text  id:user  ${USUARIO_EMAIL}
 
-Digitar senha
+Preencher Campo de Senha
     Input Text  id:password  ${USUARIO_SENHA}
 
-Clicar em logar
+Clicar em Botão de Login
     Click Element  id:btnLogin
 
-** Test Cases **
+*** Test Cases ***
 
-Cenário 1: Acessando o site da QAZANDO
-    Acessar Site da qazando
-    Aguardar site carregar
-    Clicar sobre o botao login
-    Aguardar site carregar
-    Digitar email
-    Digitar senha
-    Aguardar site carregar
-    Clicar em logar
-    Aguardar site carregar
+Cenário 1: Acessando o site do Robot
+    [Tags]  Teste1
+    Abrir Site
+    Esperar Página Carregar
+    Clicar em Link de Login
+    Esperar Página Carregar
+    Preencher Campo de E-mail
+    Preencher Campo de Senha
+    Clicar em Botão de Login
 
-Cenário 2: Testando o site do Robot
-    Abrir Site Herbert           # CORRIGIDO AQUI
-    Aguardar site carregar
-    Clicar sobre o botao login    # CORRIGIDO AQUI
-    Aguardar site carregar
-    Digitar email
-    Digitar senha
-    Clicar sobre o botao login    # CORRIGIDO AQUI (Tinha outro erro, Clicar em logar não existe)
+Cenário 2: Testando Robot
+    [Tags]  Teste3
+    Abrir Site Herbert
+    Esperar Página Carregar
+    Clicar em Link de Login
+    Esperar Página Carregar
+    Preencher Campo de E-mail
+    Preencher Campo de Senha
+    Clicar em Botão de Login
 
 Cenário 3: Testando valor no teste
-    Acessar esse site  https://www.automationpratice.com.br/
-    Aguardar site carregar
-    Clicar sobre o botao login
-    Aguardar site carregar
-    Digitar email
-    Digitar senha
-    Clicar sobre o botao login
+    [Tags]  Teste3
+    Abrir esse site  https://automationpratice.com.br/  
+    Esperar Página Carregar
+    Clicar em Link de Login
+    Esperar Página Carregar
+    Preencher Campo de E-mail
+    Preencher Campo de Senha
+    Clicar em Botão de Login
