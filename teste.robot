@@ -34,6 +34,10 @@ Preencher Campo de Senha
 Clicar em Botão de Login
     Click Element  id:btnLogin
 
+Verificar texto login realizado
+    ${texto_atual}  Get Text  id:swal2-title
+    Should Be Equal As Strings  ${texto_atual}  Login realizado
+
 *** Test Cases ***
 Cenário 1: Acessando o site do Robot
     [Tags]  Teste1
@@ -44,16 +48,20 @@ Cenário 1: Acessando o site do Robot
     Preencher Campo de E-mail
     Preencher Campo de Senha
     Clicar em Botão de Login
+    Esperar Página Carregar
+    Verificar texto login realizado
 
 Cenário 2: Testando Robot
-    [Tags]  Teste2
-    Abrir Site Herbert
+    [Tags]  Teste3
+    Abrir Site
     Esperar Página Carregar
     Clicar em Link de Login
     Esperar Página Carregar
     Preencher Campo de E-mail
     Preencher Campo de Senha
     Clicar em Botão de Login
+    Esperar Página Carregar
+    Verificar texto login realizado
 
 Cenário 3: Testando valor no teste
     [Tags]  Teste3
@@ -64,3 +72,5 @@ Cenário 3: Testando valor no teste
     Preencher Campo de E-mail
     Preencher Campo de Senha
     Clicar em Botão de Login
+    Esperar Página Carregar
+    Verificar texto login realizado
