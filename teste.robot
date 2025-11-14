@@ -1,17 +1,14 @@
 ** Settings **
-
 Library  SeleniumLibrary
 Library  BuiltIn    
 
 *** Variables ***
-
 ${SITE_URL}  https://automationpratice.com.br/
 ${SITE_URL_HERBERT}  https://www.google.com/
 ${USUARIO_EMAIL}  qazando@gmail.com
 ${USUARIO_SENHA}  123456
 
 *** Keywords ***
-
 Abrir Site Herbert
     Open Browser  ${SITE_URL_HERBERT}  chrome
 
@@ -38,7 +35,6 @@ Clicar em Botão de Login
     Click Element  id:btnLogin
 
 *** Test Cases ***
-
 Cenário 1: Acessando o site do Robot
     [Tags]  Teste1
     Abrir Site
@@ -50,7 +46,7 @@ Cenário 1: Acessando o site do Robot
     Clicar em Botão de Login
 
 Cenário 2: Testando Robot
-    [Tags]  Teste3
+    [Tags]  Teste2
     Abrir Site Herbert
     Esperar Página Carregar
     Clicar em Link de Login
