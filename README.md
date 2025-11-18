@@ -5,29 +5,29 @@ Este repositório contém um projeto de automação de testes Web desenvolvido c
 ![Robot Framework](https://img.shields.io/badge/robot%20framework-Run-blue)
 ![Selenium](https://img.shields.io/badge/selenium-library-green)
 ![Python](https://img.shields.io/badge/python-3.x-yellow)
+[![Pipeline Testes Robot](https://github.com/AndreLTenorio/QAzando-RobotFramework/actions/workflows/pipeline.yml/badge.svg)](https://github.com/AndreLTenorio/QAzando-RobotFramework/actions/workflows/pipeline.yml)
 
 ## 📋 Sobre o Projeto
 
-O projeto realiza a validação do fluxo de login na aplicação web, garantindo que o usuário consiga acessar a área logada corretamente. Ele demonstra conceitos fundamentais do Robot Framework, como:
+O projeto realiza a validação do fluxo de login na aplicação web, garantindo que o usuário consiga acessar a área logada corretamente. Ele demonstra conceitos fundamentais do Robot Framework e práticas de DevOps, incluindo:
 
-* Uso de **Keywords** personalizadas.
-* Manipulação de **Variáveis**.
-* Captura de **Screenshots** (evidências de teste).
-* Verificação de elementos e textos (Assertions).
-* Passagem de argumentos.
+* **CI/CD:** Execução automática de testes via GitHub Actions.
+* **Page Objects:** Estrutura organizada com Keywords e Variáveis.
+* **Headless Testing:** Suporte para execução em servidores sem interface gráfica.
+* **Evidências:** Geração automática de logs e screenshots.
 
 ## 🛠️ Tecnologias Utilizadas
 
 * [Python](https://www.python.org/)
 * [Robot Framework](https://robotframework.org/)
 * [SeleniumLibrary](https://github.com/robotframework/SeleniumLibrary)
-* WebDriver (Chrome)
+* **GitHub Actions** (Pipeline de CI)
 
-## ⚙️ Pré-requisitos
+## ⚙️ Pré-requisitos (Execução Local)
 
-Antes de começar, você precisa ter o **Python** e o **Pip** instalados em sua máquina. Além disso, é necessário ter o **ChromeDriver** configurado no seu PATH ou na pasta do projeto.
+Antes de começar, você precisa ter o **Python** instalado em sua máquina.
 
-### Instalação das dependências
+### 1. Instalação das dependências
 
 Execute o comando abaixo no terminal para instalar as bibliotecas necessárias:
 
