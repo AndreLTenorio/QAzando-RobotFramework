@@ -14,7 +14,7 @@ Abrir Site Herbert
     Open Browser  ${SITE_URL_HERBERT}  chrome
 
 Abrir Site
-    Open Browser ${BROWSER}  chrome
+    Open Browser    ${SITE_URL}    ${BROWSER}    options=add_argument("--no-sandbox"); add_argument("--disable-dev-shm-usage")
     Esperar Elemento  10
 
 Abrir esse site

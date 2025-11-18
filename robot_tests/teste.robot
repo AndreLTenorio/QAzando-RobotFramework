@@ -15,7 +15,7 @@ Abrir Site Herbert
 
 Abrir Site
     #  KEYWORD         TAB      ARGUMENTO 1     TAB      ARGUMENTO 2
-    Open Browser    ${SITE_URL}    ${BROWSER}
+    Open Browser    ${SITE_URL}    ${BROWSER}    options=add_argument("--no-sandbox"); add_argument("--disable-dev-shm-usage")
 
 Abrir esse site
     [Arguments]  ${url}
