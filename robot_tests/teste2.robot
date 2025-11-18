@@ -14,7 +14,7 @@ Abrir Site Herbert
     Open Browser  ${SITE_URL_HERBERT}  chrome
 
 Abrir Site
-    Open Browser    ${SITE_URL}    ${BROWSER}    options=add_argument("--no-sandbox"); add_argument("--disable-dev-shm-usage")
+    Open Browser    ${SITE_URL}    ${BROWSER}    options=add_argument("--no-sandbox"); add_argument("--disable-dev-shm-usage"); add_argument("--window-size=1920,1080")
     Esperar Elemento  10
 
 Abrir esse site
