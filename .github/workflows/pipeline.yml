@@ -28,7 +28,7 @@ jobs:
         # Aqui está o segredo: rodamos o comando igual ao seu PC
         # O parâmetro --headless é essencial para servidores (que não têm monitor)
         run: |
-          robot -d reports -v HEADLESS:true robot_tests
+          robot -d reports -v BROWSER:headlesschrome robot_tests
 
       - name: 📊 Guardar Relatórios (Artifacts)
         if: always() # Guarda mesmo se o teste falhar
