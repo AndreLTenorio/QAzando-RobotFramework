@@ -11,15 +11,17 @@ ${BROWSER}      chrome
 
 *** Keywords ***
 Abrir Site Herbert
-    Open Browser  ${SITE_URL_HERBERT}  chrome
+    # Correção: Usar a variável ${BROWSER} e adicionar as options
+    Open Browser    ${SITE_URL_HERBERT}    ${BROWSER}    options=add_argument("--no-sandbox"); add_argument("--disable-dev-shm-usage"); add_argument("--window-size=1920,1080")
 
 Abrir Site
-    #  KEYWORD         TAB      ARGUMENTO 1     TAB      ARGUMENTO 2
+    # Esta aqui já estava certa, mantenha assim!
     Open Browser    ${SITE_URL}    ${BROWSER}    options=add_argument("--no-sandbox"); add_argument("--disable-dev-shm-usage"); add_argument("--window-size=1920,1080")
 
 Abrir esse site
     [Arguments]  ${url}
-    Open Browser  ${url}  chrome
+    # CORREÇÃO PRINCIPAL DO CENÁRIO 3 AQUI EMBAIXO:
+    Open Browser    ${url}    ${BROWSER}    options=add_argument("--no-sandbox"); add_argument("--disable-dev-shm-usage"); add_argument("--window-size=1920,1080")
 
 Esperar Página Carregar
     Sleep  3s
