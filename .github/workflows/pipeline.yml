@@ -1,0 +1,38 @@
+name: Pipeline Testes Robot
+
+# Quando rodar: em todo Push na branch main ou QAzando
+on:
+  push:
+    branches: [ "main", "QAzando" ]
+  workflow_dispatch: # Permite rodar manualmente clicando num botão
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🏗️ Baixar Código (Checkout)
+        uses: actions/checkout@v4
+
+      - name: 🐍 Instalar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: 📦 Instalar Robot e Libraries
+        run: |
+          pip install robotframework
+          pip install robotframework-seleniumlibrary
+
+      - name: 🤖 Executar Testes
+        # Aqui está o segredo: rodamos o comando igual ao seu PC
+        # O parâmetro --headless é essencial para servidores (que não têm monitor)
+        run: |
+          robot -d reports -v BROWSER:headlesschrome robot_tests
+
+      - name: 📊 Guardar Relatórios (Artifacts)
+        if: always() # Guarda mesmo se o teste falhar
+        uses: actions/upload-artifact@v4
+        with:
+          name: relatorio-robot
+          path: reports

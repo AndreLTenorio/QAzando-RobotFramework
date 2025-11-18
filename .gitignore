@@ -1,4 +1,5 @@
-/results/
+# Ignora o conteúdo da pasta reports
+reports/*
 
-# Mas NÃO ignora o arquivo .gitkeep (para manter a pasta)
-!results/.gitkeep
+# Mantém o arquivo .gitkeep (para a pasta existir no Git)
+!reports/.gitkeep

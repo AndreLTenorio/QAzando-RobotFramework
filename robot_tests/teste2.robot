@@ -7,13 +7,15 @@ ${SITE_URL}  https://automationpratice.com.br/
 ${SITE_URL_HERBERT}  https://www.google.com/
 ${USUARIO_EMAIL}  qazando@gmail.com
 ${USUARIO_SENHA}  123456
+${BROWSER}
 
 *** Keywords ***
 Abrir Site Herbert
     Open Browser  ${SITE_URL_HERBERT}  chrome
 
 Abrir Site
-    Open Browser  ${SITE_URL}  chrome
+    Open Browser    ${SITE_URL}    ${BROWSER}    options=add_argument("--no-sandbox"); add_argument("--disable-dev-shm-usage"); add_argument("--window-size=1920,1080")
+    Esperar Elemento  10
 
 Abrir esse site
     [Arguments]  ${url}
@@ -41,42 +43,16 @@ Verificar texto login realizado
 Tirar Printscreen
     Capture Page Screenshot
 
+Esperar Elemento
+    [Arguments]    ${tempo}
+    Set Selenium Implicit Wait    ${tempo}s
+
 *** Test Cases ***
 Cenário 1: Acessando o site do Robot
     [Tags]  Teste1
-    Abrir Site
-    Esperar Página Carregar
-    Clicar em Link de Login
-    Esperar Página Carregar
-    Preencher Campo de E-mail
-    Tirar Printscreen
-    Preencher Campo de Senha
-    Tirar Printscreen
-    Clicar em Botão de Login
-    Tirar Printscreen
-    Esperar Página Carregar
-    Verificar texto login realizado
-
-Cenário 2: Testando Robot
-    [Tags]  Teste3
-    Abrir Site
-    Esperar Página Carregar
-    Clicar em Link de Login
-    Esperar Página Carregar
-    Preencher Campo de E-mail
-    Preencher Campo de Senha
-    Clicar em Botão de Login
-    Esperar Página Carregar
-    Verificar texto login realizado
-
-Cenário 3: Testando valor no teste
-    [Tags]  Teste3
-    Abrir esse site  https://automationpratice.com.br/  
-    Esperar Página Carregar
-    Clicar em Link de Login
-    Esperar Página Carregar
-    Preencher Campo de E-mail
-    Preencher Campo de Senha
-    Clicar em Botão de Login
-    Esperar Página Carregar
+    Abrir Site    
+    Clicar em Link de Login    
+    Preencher Campo de E-mail    
+    Preencher Campo de Senha    
+    Clicar em Botão de Login        
     Verificar texto login realizado
